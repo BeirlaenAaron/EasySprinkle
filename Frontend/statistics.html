@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>EasySprinkle - Statistics</title>
+    <meta name="description" content="EasySprinkle Control Panel" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style/normalize.css" />
+    <link rel="stylesheet" href="style/screen.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+        integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="script/app-statistics.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar o-container">
+            <h2>easysprinkle.</h2>
+            <ul>
+                <li>
+                    <a href="index.html"><i class="material-icons">dashboard</i>Dashboard</a>
+                </li>
+                <li class="active">
+                    <a href="statistics.html" class="active-statistics"><i
+                            class="material-icons">assessment</i>Statistics</a>
+                </li>
+                <li>
+                    <a href="management.html"><i class="material-icons">build</i>Management</a>
+                </li>
+            </ul>
+        </div>
+        <div class="main_content o-container">
+            <div class="header">
+                <a href="#"><i class="burger material-icons">menu</i></a>
+                <a href="#"><i class="settings material-icons">settings</i></a>
+            </div>
+            <div class="main">
+                <div class="o-layout o-layout--justify-start">
+                    <div class="temperature">
+                        <h3>Temperature</h3>
+                        <div id="chart_temp" class="charts"></div>
+                    </div>
+                    <div class="water">
+                        <h3>Water Level</h3>
+                        <div id="chart_water" class="charts"></div>
+                    </div>
+                    <div class="moist">
+                        <h3>Moisture</h3>
+                        <div id="chart_moist" class="charts"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="script/nav.js"></script>
+</body>
+
+</html>

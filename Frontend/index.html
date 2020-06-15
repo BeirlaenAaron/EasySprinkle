@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>EasySprinkle</title>
+  <meta name="description" content="EasySprinkle Control Panel" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style/normalize.css" />
+  <link rel="stylesheet" href="style/screen.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+    integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+  <script src="script/app-dashboard.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="sidebar o-container">
+      <h2>easysprinkle.</h2>
+      <ul>
+        <li class="active">
+          <a href="index.html" class="active-dashboard"><i class="material-icons">dashboard</i>Dashboard</a>
+        </li>
+        <li>
+          <a href="statistics.html"><i class="material-icons">assessment</i>Statistics</a>
+        </li>
+        <li>
+          <a href="management.html"><i class="material-icons">build</i>Management</a>
+        </li>
+      </ul>
+    </div>
+    <div class="main_content o-container">
+      <div class="header">
+        <a href="#"><i class="burger material-icons">menu</i></a>
+        <a href="#"><i class="settings material-icons">settings</i></a>
+      </div>
+      <div class="main">
+        <div class="boxes o-layout o-layout--justify-start">
+          <div class="logs">
+            <h3>Logs</h3>
+            <table class="js-logs" style="width: 100%;">
+              <!-- <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Logs</th>
+              </tr> -->
+              <!-- <tr>
+                <td>28/04</td>
+                <td>16:45</td>
+                <td>Sprinklers turned off</td>
+              </tr> -->
+            </table>
+          </div>
+          <div class="overview">
+            <h3>Overview</h3>
+            <h4>Current status</h4>
+            <div class="js-status o-layout o-layout--justify-center">
+              <!-- <p class="status-off">OFF</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script/nav.js"></script>
+</body>
+
+</html>

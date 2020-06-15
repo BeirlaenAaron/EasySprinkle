@@ -1,0 +1,590 @@
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+
+@font-face {
+  font-family: 'HK Grotesk';
+  font-weight: 400;
+  src: url('../fonts/HKGrotesk-Regular.otf') format('otf');
+}
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+html {
+  font-size: 21px;
+  line-height: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e4e4e4;
+}
+
+/*
+    Objects: Wrapper
+    ---
+    Main page layout
+*/
+
+.wrapper {
+  display: flex;
+  position: relative;
+}
+
+/*
+    Sidebar
+    ---
+    Sidebar navigation of page
+*/
+
+.wrapper .sidebar {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: #383a49;
+  z-index: 999;
+}
+
+.wrapper .sidebar h2 {
+  color: #fff;
+  font-family: 'HK Grotesk', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+  text-align: center;
+  background: #3e3d56;
+  padding: 24px 0;
+}
+
+.wrapper .sidebar ul li {
+  padding: 15px;
+  position: relative;
+}
+
+.wrapper .sidebar ul li a {
+  color: #999fb3;
+  display: block;
+}
+
+.wrapper .sidebar ul li a .material-icons {
+  width: 36px;
+  vertical-align: middle;
+}
+
+.wrapper .sidebar ul li:hover,
+.wrapper .sidebar ul li.active {
+  background: #323541;
+}
+
+.wrapper .sidebar ul li a:hover {
+  color: #fff;
+}
+
+.wrapper .sidebar ul li a.active-dashboard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #687cbd;
+  display: block;
+}
+
+.wrapper .sidebar ul li a.active-statistics::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #68BD6E;
+  display: block;
+}
+
+.wrapper .sidebar ul li a.active-management::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #B61212;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .sidebar ul li {
+    display: flex;
+  }
+}
+
+/*
+    Main
+    ---
+    Main content of page
+*/
+
+.wrapper .main_content {
+  width: 100%;
+  margin-left: 300px;
+}
+
+.wrapper .main_content .header {
+  position: fixed;
+  width: 100%;
+  padding: 24px;
+  background: #42476b;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  z-index: 1;
+}
+
+.wrapper .main_content .header a .material-icons {
+  color: #fff;
+  vertical-align: middle;
+}
+
+.wrapper .main_content .main {
+  margin: 20px;
+  margin-top: 100px;
+  font-family: 'Calibri', Arial, Helvetica, sans-serif;
+}
+
+.wrapper .main_content .header .burger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .wrapper .main_content .header .burger {
+    display: inline-block;
+  }
+
+  .wrapper .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in;
+    z-index: 1;
+  }
+  .wrapper .main_content {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .wrapper .main_content .header {
+    padding: 16px;
+    z-index: 2;
+  }
+
+  .wrapper .sidebar h2 {
+    padding: 16px;
+  }
+}
+
+.wrapper .sidebar-active {
+  transform: translateX(0%);
+}
+
+.wrapper .main_content .main .boxes {
+  padding: 5px;
+}
+
+.wrapper .main_content .main .logs {
+  background-color: #fafafa;
+  width: 400px;
+  height: auto;
+  margin: 20px;
+  border-left: 10px solid #79d5d3;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px rgba(125, 125, 125, 0.3);
+}
+
+.wrapper .main_content .main .logs h3 {
+  color: #4b8886;
+  padding: 10px 16px;
+  font-family: 'Calibri', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  border-bottom: 2px solid rgba(125, 125, 125, 0.1);
+}
+
+.wrapper .main_content .main .logs table,
+th,
+td {
+  border-bottom: 2px solid rgba(125, 125, 125, 0.1);
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+
+.wrapper .main_content .main .logs th,
+td {
+  padding: 10px 16px;
+}
+
+.wrapper .main_content .main .logs th {
+  text-align: left;
+}
+
+.wrapper .main_content .main .logs td {
+  font-size: 16px;
+}
+
+.wrapper .main_content .main .logs tr:nth-child(odd) td:not(first-child) {
+  background: #f3f3f3;
+}
+
+.wrapper .main_content .main .overview {
+  background-color: #fafafa;
+  width: calc(100% - 500px);
+  min-width: 200px;
+  margin: 20px;
+  height: 200px;
+  border-left: 10px solid #7cd579;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px rgba(125, 125, 125, 0.3);
+}
+
+.wrapper .main_content .main .overview h3 {
+  color: #5d9e5a;
+  padding: 10px 16px;
+  font-family: 'Calibri', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  border-bottom: 2px solid rgba(125, 125, 125, 0.1);
+}
+
+.wrapper .main_content .main .overview h4 {
+  padding: 10px 16px;
+  text-align: center;
+}
+
+.wrapper .main_content .main .overview .status-off {
+  background: #d80000;
+  color: white;
+  display: inline-block;
+  font-size: 28px;
+  padding: 8px 32px;
+  border-radius: 10px;
+}
+
+.wrapper .main_content .main .overview .status-on {
+  background: #13BC00;
+  color: white;
+  display: inline-block;
+  font-size: 28px;
+  padding: 8px 32px;
+  border-radius: 10px;
+}
+
+.wrapper .main_content .main .temperature {
+  background-color: #fafafa;
+  width: 450px;
+  margin: 20px;
+  height: 270px;
+  border-left: 10px solid #D60000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px rgba(125, 125, 125, 0.3);
+}
+
+.wrapper .main_content .main .temperature h3 {
+  color: #000;
+  padding: 6px 16px;
+  font-family: 'Calibri', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  border-bottom: 2px solid rgba(125, 125, 125, 0.1);
+}
+
+.wrapper .main_content .main .water {
+  background-color: #fafafa;
+  width: 450px;
+  margin: 20px;
+  height: 270px;
+  border-left: 10px solid #7D87E2;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px rgba(125, 125, 125, 0.3);
+}
+
+.wrapper .main_content .main .water h3 {
+  color: #000;
+  padding: 6px 16px;
+  font-family: 'Calibri', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  border-bottom: 2px solid rgba(125, 125, 125, 0.1);
+}
+
+.wrapper .main_content .main .moist {
+  background-color: #fafafa;
+  width: 450px;
+  margin: 20px;
+  height: 270px;
+  border-left: 10px solid #86371E;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px rgba(125, 125, 125, 0.3);
+}
+
+.wrapper .main_content .main .moist h3 {
+  color: #000;
+  padding: 6px 16px;
+  font-family: 'Calibri', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  border-bottom: 2px solid rgba(125, 125, 125, 0.1);
+}
+
+.wrapper .main_content .main .manage {
+  background-color: #fafafa;
+  width: 500px;
+  min-width: 240px;
+  margin: 20px;
+  border-left: 10px solid #414792;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px rgba(125, 125, 125, 0.3);
+}
+
+.wrapper .main_content .main .manage h3 {
+  color: #414792;
+  padding: 10px 16px;
+  font-family: 'Calibri', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  border-bottom: 2px solid rgba(125, 125, 125, 0.1);
+}
+
+.wrapper .main_content .main .manage h4 {
+  padding: 16px 16px 0px;
+  font-size: 24px;
+}
+
+.wrapper .main_content .main .manage h5 {
+  padding: 0px 16px;
+  color: #7D7D7D;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.wrapper .main_content .main .manage .measure-result {
+  padding: 0px 16px 32px;
+}
+
+.wrapper .main_content .main .manage .js-togglebtn {
+  padding: 16px 16px 32px;
+}
+
+.wrapper .main_content .main .manage .btn-measure {
+  background: #288ED2;
+  color: white;
+  display: inline-block;
+  font-size: 28px;
+  padding: 8px 32px;
+  border-radius: 10px;
+  margin: 16px;
+}
+
+.toggle-btn {
+  width: 80px;
+  height: 40px;
+  background: gray;
+  border-radius: 30px;
+  padding: 5px;
+  margin-bottom: 16px;
+}
+
+.toggle-btn > .inner-circle {
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  transition: all 300ms ease-in-out;
+}
+
+.toggle-btn.active-btn {
+  background: #00acee;
+}
+
+.toggle-btn.active-btn > .inner-circle {
+  margin-left:40px;
+}
+
+@media (max-width: 1050px) {
+  .wrapper .main_content .main .overview {
+    width: 100%;
+    margin: 20px 5px;
+  }
+
+  .wrapper .main_content .main .logs {
+    margin: 20px 5px;
+  }
+
+  .wrapper .main_content .main .boxes {
+    flex-direction: column-reverse;
+  }
+
+  .wrapper .main_content .main .manage {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper .main_content .main .logs {
+    margin: 20px 5px;
+    width: 100%;
+  }
+
+  .wrapper .main_content .main .overview {
+    margin: 20px 5px;
+    width: 100%;
+  }
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 91.4em; /* 91.4 * 21px = 1920px */
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.o-layout__item {
+  flex-basis: 100%;
+}
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+  margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+  padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+  margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+  padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+  margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+  padding: 0 24px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+  justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+  justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+  justify-content: center;
+}
+
+.o-layout--justify-space-around {
+  justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+  justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+  align-items: flex-start;
+}
+
+.o-layout--align-end {
+  align-items: flex-end;
+}
+
+.o-layout--align-center {
+  align-items: center;
+}
+
+.o-layout--align-baseline {
+  align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+  align-content: start;
+}
+
+.o-layout--align-content-end {
+  align-content: end;
+}
+
+.o-layout--align-content-center {
+  align-content: center;
+}
+
+.o-layout--align-content-space-around {
+  align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+  align-content: space-between;
+}
+
+/*------------------------------------*\
+  #MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
